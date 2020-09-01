@@ -1,0 +1,4 @@
+{
+  "todoListsUrl": "http://localhost:8080/todolists/",
+  "todoItemsUrl": "http://localhost:8080/todoitems/"
+}
