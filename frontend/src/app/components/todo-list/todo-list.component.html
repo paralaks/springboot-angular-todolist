@@ -1,0 +1,21 @@
+<div *ngIf="todoLists | async as lists">
+
+  <h3>Your todo lists</h3>
+
+  <div *ngIf="lists && lists.length; else elseBlock">
+    <ul>
+      <li *ngFor="let list of lists">
+        <a routerLink="/todoitems/{{list.id}}"> {{list.name}}</a>
+        -- {{ list.items.length ? list.items.length + " item(s)" : "Empty" }}
+      </li>
+    </ul>
+  </div>
+  <ng-template #elseBlock>
+    <div class="noItemsBlock">There are not any items. Use form below to add one.</div>
+  </ng-template>
+
+
+  <input type="text" [(ngModel)]="newName"/>
+  <button (click)="addList()">Add new list</button>
+
+</div>
