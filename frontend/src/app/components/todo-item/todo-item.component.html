@@ -1,0 +1,25 @@
+<div *ngIf="todoList | async as list">
+
+  <h3>Items for : <span class="todoListNameHeader">{{list.name}}</span></h3>
+
+  <div *ngIf="list.items && list.items.length; else elseBlock">
+    <ul>
+      <li *ngFor="let item of list.items">
+        <a (click)="updateItem(item);$event.preventDefault()"> {{item.todo}}</a>
+        <span *ngIf="item.complete; else elseCompleteBlock" class="completeCheck">&#10003;</span>
+        <ng-template #elseCompleteBlock>
+          <button (click)="flipComplete(item)">Mark complete</button>
+        </ng-template>
+        <button (click)="deleteItem(item)">Delete</button>
+      </li>
+    </ul>
+  </div>
+  <ng-template #elseBlock>
+    <div class="noItemsBlock">There are not any items. Use form below to add one.</div>
+  </ng-template>
+
+
+  <input type="text" [(ngModel)]="newName"/>
+  <button (click)="addItem()">Add new TODO</button>
+
+</div>
