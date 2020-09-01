@@ -1,0 +1,49 @@
+GET http://localhost:8080/todolists/
+Accept: application/json
+
+###
+GET http://localhost:8080/todolists/4
+Accept: application/json
+
+###
+POST  http://localhost:8080/todolists/add
+Content-Type: application/json
+Accept: application/json
+
+{
+  "name": "Test todo list 7"
+}
+
+###
+DELETE http://localhost:8080/todolists/6
+Accept: application/json
+
+###
+###
+###
+GET http://localhost:8080/todoitems/
+Accept: application/json
+
+###
+GET http://localhost:8080/todoitems/listId/2
+Accept: application/json
+
+###
+GET http://localhost:8080/todoitems/2
+Accept: application/json
+
+###
+POST  http://localhost:8080/todoitems/add
+Content-Type: application/json
+Accept: application/json
+
+{
+  "id": 6,
+  "listId": 2,
+  "todo": "Supplements from shoppers",
+  "complete": 1
+}
+
+###
+DELETE http://localhost:8080/todoitems/7
+Accept: application/json
