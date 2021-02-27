@@ -11,7 +11,7 @@ Content-Type: application/json
 Accept: application/json
 
 {
-  "name": "Test todo list 7"
+  "name": "Test todo list 1"
 }
 
 ###
@@ -38,9 +38,9 @@ Content-Type: application/json
 Accept: application/json
 
 {
-  "id": 6,
+  "id": null,
   "listId": 2,
-  "todo": "Supplements from shoppers",
+  "todo": "Supplements from shoppers 2",
   "complete": 1
 }
 

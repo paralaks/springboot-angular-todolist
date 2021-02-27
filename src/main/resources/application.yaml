@@ -1,0 +1,19 @@
+# Server
+server:
+  port: 8080
+  servlet:
+    context-path: /
+
+#Hibernate
+spring:
+  datasource:
+    data: classpath*:create-tables.sql
+    url: jdbc:mysql://localhost:3306/test?serverTimezone=UTC
+    username: test
+    password: test
+  jpa:
+    generate-ddl: true
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
