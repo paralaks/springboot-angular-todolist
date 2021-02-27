@@ -52,6 +52,7 @@ public class TodoItem {
   }
 
   public void setTodoList(TodoList list) {
+    this.listId = list == null ? null : list.getId();
     this.todoList = list;
   }
 

@@ -37,6 +37,9 @@ public class TodoListServiceImpl implements TodoListService {
 
   @Override
   public String deleteOne(Integer id) {
+    if (!todoListRepository.findById(id).isPresent())
+      return null;
+
     todoListRepository.deleteById(id);
     return "{\"message\": \"Todo list deleted successfully.\"}";
   }
